@@ -21,5 +21,3 @@ $ forge script scripts/DeployDiamond.s.sol --rpc-url <YOUR_RPC_URL> --private-ke
 $ forge test
 ```
 `Note`: The staking platform supports ERC20, ERC721, and ERC1155 tokens with customizable reward mechanisms, time-based decay, and cooldown periods. The platform includes security features like ReentrancyGuard and proper implementation of receiver interfaces.
-
-Need some more clarity? Join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2)
