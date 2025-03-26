@@ -1,39 +1,25 @@
 [![Mentioned in Awesome Foundry](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/crisgarner/awesome-foundry)
-# Foundry + Hardhat Diamonds
-
-This is a mimimal template for [Diamonds](https://github.com/ethereum/EIPs/issues/2535) which allows facet selectors to be generated on the go in solidity tests!
-
+# Foundry Diamonds Staking Platform
+This is a flexible multi-token staking implementation using [Diamonds](https://github.com/ethereum/EIPs/issues/2535) pattern with AppStorage for shared state across facets.
 ## Installation
-
 - Clone this repo
 - Install dependencies
-
 ```bash
-$ yarn && forge update
+$ forge install
 ```
-
 ### Compile
-
 ```bash
-$ npx hardhat compile
+$ forge build
 ```
-
 ## Deployment
-
-### Hardhat
-
-```bash
-$ npx hardhat run scripts/deploy.js
-```
-
 ### Foundry
-
 ```bash
-$ forge t
+$ forge script scripts/DeployDiamond.s.sol --rpc-url <YOUR_RPC_URL> --private-key <YOUR_PRIVATE_KEY>
 ```
+### Testing
+```bash
+$ forge test
+```
+`Note`: The staking platform supports ERC20, ERC721, and ERC1155 tokens with customizable reward mechanisms, time-based decay, and cooldown periods. The platform includes security features like ReentrancyGuard and proper implementation of receiver interfaces.
 
-`Note`: A lot of improvements are still needed so contributions are welcome!!
-
-Bonus: The [DiamondLoupefacet](contracts/facets/DiamondLoupeFacet.sol) uses an updated [LibDiamond](contracts/libraries//LibDiamond.sol) which utilises solidity custom errors to make debugging easier especially when upgrading diamonds. Take it for a spin!!
-
-Need some more clarity? message me [on twitter](https://twitter.com/Timidan_x), Or join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2)
+Need some more clarity? Join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2)
